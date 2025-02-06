@@ -8,14 +8,22 @@ function App() {
 
 
   const [todos,setTodos]=useState([
-    'Go to the gym',
-    'Eat more fruits and veg',
-    'Pick up the kids from school'
   ])
 
   function handleAddTodos(newTodo){
     const newTodoList=[...todos,newTodo]
     setTodos(newTodoList)
+  }
+
+  function handleDeleteTodos(index){
+    const newTodoList = todos.filter((todo,todoIndex)=>{
+      return todoIndex !==index
+    })
+    setTodos(newTodoList)
+  }
+
+  function handleEditTodos(index){
+
   }
 
   return (
